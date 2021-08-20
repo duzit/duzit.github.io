@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>对不同构建版本的解释 | adair</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="记录文档">
+    
+    <link rel="preload" href="/assets/css/0.styles.e2ae7eca.css" as="style"><link rel="preload" href="/assets/js/app.d4330f7b.js" as="script"><link rel="preload" href="/assets/js/2.dc11fe7f.js" as="script"><link rel="preload" href="/assets/js/48.4864d51a.js" as="script"><link rel="prefetch" href="/assets/js/10.1696f22e.js"><link rel="prefetch" href="/assets/js/11.39cac135.js"><link rel="prefetch" href="/assets/js/12.4317c6d0.js"><link rel="prefetch" href="/assets/js/13.0e6884bf.js"><link rel="prefetch" href="/assets/js/14.4dfb7db3.js"><link rel="prefetch" href="/assets/js/15.53bbf579.js"><link rel="prefetch" href="/assets/js/16.0a8e9eb3.js"><link rel="prefetch" href="/assets/js/17.8abee487.js"><link rel="prefetch" href="/assets/js/18.6db0693f.js"><link rel="prefetch" href="/assets/js/19.d3fbab0a.js"><link rel="prefetch" href="/assets/js/20.f8bb8723.js"><link rel="prefetch" href="/assets/js/21.1901a260.js"><link rel="prefetch" href="/assets/js/22.57765e68.js"><link rel="prefetch" href="/assets/js/23.fb8791ca.js"><link rel="prefetch" href="/assets/js/24.562d5383.js"><link rel="prefetch" href="/assets/js/25.3ea34616.js"><link rel="prefetch" href="/assets/js/26.af09651c.js"><link rel="prefetch" href="/assets/js/27.24bd2afa.js"><link rel="prefetch" href="/assets/js/28.e95ae111.js"><link rel="prefetch" href="/assets/js/29.e5b35b6e.js"><link rel="prefetch" href="/assets/js/3.fb921b63.js"><link rel="prefetch" href="/assets/js/30.fe7e2f6b.js"><link rel="prefetch" href="/assets/js/31.5cf42cec.js"><link rel="prefetch" href="/assets/js/32.f2769082.js"><link rel="prefetch" href="/assets/js/33.90d21ffc.js"><link rel="prefetch" href="/assets/js/34.bd7ea24e.js"><link rel="prefetch" href="/assets/js/35.114098c3.js"><link rel="prefetch" href="/assets/js/36.a80601c3.js"><link rel="prefetch" href="/assets/js/37.eedc0874.js"><link rel="prefetch" href="/assets/js/38.00ecf0e7.js"><link rel="prefetch" href="/assets/js/39.670e8393.js"><link rel="prefetch" href="/assets/js/4.b9b777bd.js"><link rel="prefetch" href="/assets/js/40.c21095da.js"><link rel="prefetch" href="/assets/js/41.4d59d979.js"><link rel="prefetch" href="/assets/js/42.58c03624.js"><link rel="prefetch" href="/assets/js/43.f8fa44ad.js"><link rel="prefetch" href="/assets/js/44.3a6ba9df.js"><link rel="prefetch" href="/assets/js/45.6427d44d.js"><link rel="prefetch" href="/assets/js/46.0f8db324.js"><link rel="prefetch" href="/assets/js/47.586ee463.js"><link rel="prefetch" href="/assets/js/49.36a79740.js"><link rel="prefetch" href="/assets/js/5.0bea389e.js"><link rel="prefetch" href="/assets/js/50.19e4fbe9.js"><link rel="prefetch" href="/assets/js/51.f90f6772.js"><link rel="prefetch" href="/assets/js/52.34ff9923.js"><link rel="prefetch" href="/assets/js/53.2bfcabe3.js"><link rel="prefetch" href="/assets/js/54.b65102c8.js"><link rel="prefetch" href="/assets/js/55.70a49a04.js"><link rel="prefetch" href="/assets/js/56.64c98e3e.js"><link rel="prefetch" href="/assets/js/57.a5f9c609.js"><link rel="prefetch" href="/assets/js/58.1889b271.js"><link rel="prefetch" href="/assets/js/59.5c6c9720.js"><link rel="prefetch" href="/assets/js/6.3d277fb6.js"><link rel="prefetch" href="/assets/js/60.aa32734d.js"><link rel="prefetch" href="/assets/js/61.022be591.js"><link rel="prefetch" href="/assets/js/62.b48ea83c.js"><link rel="prefetch" href="/assets/js/63.d0a73f42.js"><link rel="prefetch" href="/assets/js/64.50040c8f.js"><link rel="prefetch" href="/assets/js/65.8e4f8ee5.js"><link rel="prefetch" href="/assets/js/66.49cdbd58.js"><link rel="prefetch" href="/assets/js/67.9efdc02c.js"><link rel="prefetch" href="/assets/js/68.97fd8043.js"><link rel="prefetch" href="/assets/js/69.64c4a5c7.js"><link rel="prefetch" href="/assets/js/7.6c79748d.js"><link rel="prefetch" href="/assets/js/70.3be18d0a.js"><link rel="prefetch" href="/assets/js/71.a1c4f1c3.js"><link rel="prefetch" href="/assets/js/72.2af0b4ad.js"><link rel="prefetch" href="/assets/js/73.396eb883.js"><link rel="prefetch" href="/assets/js/74.62923dc0.js"><link rel="prefetch" href="/assets/js/75.00f91906.js"><link rel="prefetch" href="/assets/js/76.a0243067.js"><link rel="prefetch" href="/assets/js/8.0123be59.js"><link rel="prefetch" href="/assets/js/9.c1b52b07.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e2ae7eca.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/favicon.ico" alt="adair" class="logo"> <span class="site-name can-hide">adair</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="我的笔记" class="dropdown-title"><span class="title">我的笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="我的笔记" class="mobile-dropdown-title"><span class="title">我的笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/note/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/note/echarts/" class="nav-link">
+  Echarts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Interview" class="dropdown-title"><span class="title">Interview</span> <span class="arrow down"></span></button> <button type="button" aria-label="Interview" class="mobile-dropdown-title"><span class="title">Interview</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/interview/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/vueSource/" class="nav-link">
+  Vue2源码
+</a></div><div class="nav-item"><a href="/es6/" class="nav-link">
+  ES6
+</a></div> <a href="https://github.com/duzit/du-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="我的笔记" class="dropdown-title"><span class="title">我的笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="我的笔记" class="mobile-dropdown-title"><span class="title">我的笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/note/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/note/echarts/" class="nav-link">
+  Echarts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Interview" class="dropdown-title"><span class="title">Interview</span> <span class="arrow down"></span></button> <button type="button" aria-label="Interview" class="mobile-dropdown-title"><span class="title">Interview</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/interview/webpack/" class="nav-link">
+  Webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/vueSource/" class="nav-link">
+  Vue2源码
+</a></div><div class="nav-item"><a href="/es6/" class="nav-link">
+  ES6
+</a></div> <a href="https://github.com/duzit/du-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/interview/vue/单向数据流.html" class="sidebar-link">Vue单向数据流的理解</a></li><li><a href="/interview/vue/通信方式.html" class="sidebar-link">Vue 通信</a></li><li><a href="/interview/vue/computed.watch.html" class="sidebar-link">computed和watch的区别</a></li><li><a href="/interview/vue/delete.$delete.html" class="sidebar-link">delete Vue.delete 的区别</a></li><li><a href="/interview/vue/diff.vdom.html" class="sidebar-link">diff-vdom</a></li><li><a href="/interview/vue/keep-alive.html" class="sidebar-link">keepalive</a></li><li><a href="/interview/vue/vue.html" class="sidebar-link">Vue</a></li><li><a href="/interview/vue/Vue编译模板原理.html" class="sidebar-link">Vue 编译模板原理</a></li><li><a href="/interview/vue/vuex.html" class="sidebar-link">Vuex</a></li><li><a href="/interview/vue/对不同构建版本的解释.html" class="active sidebar-link">对不同构建版本的解释</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/interview/vue/对不同构建版本的解释.html#对不同构建版本的解释" class="sidebar-link">对不同构建版本的解释</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="对不同构建版本的解释"><a href="#对不同构建版本的解释" class="header-anchor">#</a> 对不同构建版本的解释</h2> <p><a href="https://cn.vuejs.org/v2/guide/installation.html#%E5%AF%B9%E4%B8%8D%E5%90%8C%E6%9E%84%E5%BB%BA%E7%89%88%E6%9C%AC%E7%9A%84%E8%A7%A3%E9%87%8A" target="_blank" rel="noopener noreferrer">Vue官网解释<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="术语"><a href="#术语" class="header-anchor">#</a> 术语</h3> <ul><li><p>完整版<br>
+同时包含编译器和运行时版本</p></li> <li><p>编译器<br>
+用来将模板字符串编译为 JavaScript 渲染函数的代码</p></li> <li><p>运行时<br>
+用来创建 Vue 实例，渲染并处理虚拟 DOM 的代码。基本上是出去编译器的其他一切。</p></li> <li><p>UMD<br>
+UMD 版本可以通过 <code>&lt;script&gt;</code> 标签直接用在浏览器中。<br>
+jsDelivr CDN 的 https://cdn.jsdelivr.net/npm/vue@2.6.14 默认文件就是运行时 + 编译器的 UMD 版本 (vue.js)</p></li> <li><p>CommonJs<br>
+CommonJs 用来配合老的打包工具，如 Browserify 或 webpack 1。<br>
+这些打包工具的默认文件（pkg.main）是只包含运行时的 CommonJs 版本 (vue.runtime.common.js)。</p></li> <li><p>ES Module<br>
+从 2.6 开始 Vue 会提供两个 ES Module （ESM） 构建文件。</p> <ol><li>为打包工具如 webpack 2 或 Rollup 提供的现代打包工具</li> <li>为浏览器提供的 ESM ，用于在现代浏览器中通过 <code>&lt;script type=&quot;module&quot;&gt;</code> 直接导入。</li></ol></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/interview/vue/vuex.html" class="prev">
+        Vuex
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.d4330f7b.js" defer></script><script src="/assets/js/2.dc11fe7f.js" defer></script><script src="/assets/js/48.4864d51a.js" defer></script>
+  </body>
+</html>
