@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BFC 理解 | Adair</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="记录文档">
+    
+    <link rel="preload" href="/assets/css/0.styles.ea4a5991.css" as="style"><link rel="preload" href="/assets/js/app.e7d09f62.js" as="script"><link rel="preload" href="/assets/js/2.cb849f65.js" as="script"><link rel="preload" href="/assets/js/40.e7150e18.js" as="script"><link rel="prefetch" href="/assets/js/10.90b297ea.js"><link rel="prefetch" href="/assets/js/100.404dda67.js"><link rel="prefetch" href="/assets/js/101.464a4823.js"><link rel="prefetch" href="/assets/js/102.65b3e9ea.js"><link rel="prefetch" href="/assets/js/103.59c703d6.js"><link rel="prefetch" href="/assets/js/104.6759b4ed.js"><link rel="prefetch" href="/assets/js/105.b1e3ee89.js"><link rel="prefetch" href="/assets/js/106.6ae0af9d.js"><link rel="prefetch" href="/assets/js/107.ed47f8c8.js"><link rel="prefetch" href="/assets/js/108.e05aa9d8.js"><link rel="prefetch" href="/assets/js/109.23262e84.js"><link rel="prefetch" href="/assets/js/11.b5c4996c.js"><link rel="prefetch" href="/assets/js/110.ec71c0ed.js"><link rel="prefetch" href="/assets/js/111.236938f4.js"><link rel="prefetch" href="/assets/js/112.9677ba7c.js"><link rel="prefetch" href="/assets/js/113.38bd955a.js"><link rel="prefetch" href="/assets/js/114.b0432410.js"><link rel="prefetch" href="/assets/js/115.91530d83.js"><link rel="prefetch" href="/assets/js/116.a44b4c5b.js"><link rel="prefetch" href="/assets/js/117.676878ca.js"><link rel="prefetch" href="/assets/js/118.11ef54b5.js"><link rel="prefetch" href="/assets/js/119.69269f17.js"><link rel="prefetch" href="/assets/js/12.7534c533.js"><link rel="prefetch" href="/assets/js/120.c0b3580d.js"><link rel="prefetch" href="/assets/js/121.c9b54490.js"><link rel="prefetch" href="/assets/js/122.25fb4176.js"><link rel="prefetch" href="/assets/js/123.9b36fb3d.js"><link rel="prefetch" href="/assets/js/124.0076872b.js"><link rel="prefetch" href="/assets/js/125.fe4c6bd4.js"><link rel="prefetch" href="/assets/js/126.4e511a99.js"><link rel="prefetch" href="/assets/js/127.d04783d2.js"><link rel="prefetch" href="/assets/js/128.30dd6fba.js"><link rel="prefetch" href="/assets/js/129.f761f35f.js"><link rel="prefetch" href="/assets/js/13.f017c453.js"><link rel="prefetch" href="/assets/js/130.22e0fa9a.js"><link rel="prefetch" href="/assets/js/131.b450722b.js"><link rel="prefetch" href="/assets/js/132.86f8e12a.js"><link rel="prefetch" href="/assets/js/133.eb72ad69.js"><link rel="prefetch" href="/assets/js/134.8c6cb5cc.js"><link rel="prefetch" href="/assets/js/135.f693979a.js"><link rel="prefetch" href="/assets/js/136.06fd9295.js"><link rel="prefetch" href="/assets/js/137.c087e9e1.js"><link rel="prefetch" href="/assets/js/138.4a54b09d.js"><link rel="prefetch" href="/assets/js/139.42eeff58.js"><link rel="prefetch" href="/assets/js/14.e788582b.js"><link rel="prefetch" href="/assets/js/140.6616b2cc.js"><link rel="prefetch" href="/assets/js/141.83f2a602.js"><link rel="prefetch" href="/assets/js/142.5a827528.js"><link rel="prefetch" href="/assets/js/143.c0f8bfcd.js"><link rel="prefetch" href="/assets/js/144.91cf82d7.js"><link rel="prefetch" href="/assets/js/145.dd779d79.js"><link rel="prefetch" href="/assets/js/146.a6be0370.js"><link rel="prefetch" href="/assets/js/147.acb05422.js"><link rel="prefetch" href="/assets/js/148.c6d8a916.js"><link rel="prefetch" href="/assets/js/149.d9a57587.js"><link rel="prefetch" href="/assets/js/15.3cf61877.js"><link rel="prefetch" href="/assets/js/150.2dd78201.js"><link rel="prefetch" href="/assets/js/151.cef29e9f.js"><link rel="prefetch" href="/assets/js/152.cb32baa3.js"><link rel="prefetch" href="/assets/js/153.03fa0262.js"><link rel="prefetch" href="/assets/js/154.ef7e63a9.js"><link rel="prefetch" href="/assets/js/155.9d10852a.js"><link rel="prefetch" href="/assets/js/156.dc1f2764.js"><link rel="prefetch" href="/assets/js/157.882309c3.js"><link rel="prefetch" href="/assets/js/158.5e2d883b.js"><link rel="prefetch" href="/assets/js/159.17aaf343.js"><link rel="prefetch" href="/assets/js/16.52243a68.js"><link rel="prefetch" href="/assets/js/160.357c1c65.js"><link rel="prefetch" href="/assets/js/161.df6a8712.js"><link rel="prefetch" href="/assets/js/162.bc4ad861.js"><link rel="prefetch" href="/assets/js/163.1f7b57ee.js"><link rel="prefetch" href="/assets/js/164.049c8998.js"><link rel="prefetch" href="/assets/js/165.230f84be.js"><link rel="prefetch" href="/assets/js/166.f30c490c.js"><link rel="prefetch" href="/assets/js/167.0de535ef.js"><link rel="prefetch" href="/assets/js/168.60bfd1d9.js"><link rel="prefetch" href="/assets/js/169.bbf86767.js"><link rel="prefetch" href="/assets/js/17.4eb0aea2.js"><link rel="prefetch" href="/assets/js/170.cb39d81f.js"><link rel="prefetch" href="/assets/js/171.9e1c9cc3.js"><link rel="prefetch" href="/assets/js/172.7cb4900e.js"><link rel="prefetch" href="/assets/js/173.0c3cdfed.js"><link rel="prefetch" href="/assets/js/174.35200cb7.js"><link rel="prefetch" href="/assets/js/175.50b01246.js"><link rel="prefetch" href="/assets/js/176.c8b50ceb.js"><link rel="prefetch" href="/assets/js/177.49e3a1c3.js"><link rel="prefetch" href="/assets/js/178.ca39b266.js"><link rel="prefetch" href="/assets/js/179.aacc06c7.js"><link rel="prefetch" href="/assets/js/18.9c32e586.js"><link rel="prefetch" href="/assets/js/180.827ae525.js"><link rel="prefetch" href="/assets/js/181.8c492f8c.js"><link rel="prefetch" href="/assets/js/182.47549d36.js"><link rel="prefetch" href="/assets/js/183.27905647.js"><link rel="prefetch" href="/assets/js/184.aaeb688e.js"><link rel="prefetch" href="/assets/js/185.8cce28cb.js"><link rel="prefetch" href="/assets/js/186.e5f2662d.js"><link rel="prefetch" href="/assets/js/187.5384719d.js"><link rel="prefetch" href="/assets/js/188.91c33e8f.js"><link rel="prefetch" href="/assets/js/189.c1645095.js"><link rel="prefetch" href="/assets/js/19.36840e29.js"><link rel="prefetch" href="/assets/js/190.a0689cd4.js"><link rel="prefetch" href="/assets/js/191.82a3ce64.js"><link rel="prefetch" href="/assets/js/192.aa1f6c55.js"><link rel="prefetch" href="/assets/js/193.7e33f060.js"><link rel="prefetch" href="/assets/js/194.daa964e1.js"><link rel="prefetch" href="/assets/js/195.073f6acb.js"><link rel="prefetch" href="/assets/js/196.2ef77f99.js"><link rel="prefetch" href="/assets/js/197.abb1b074.js"><link rel="prefetch" href="/assets/js/198.30f7b095.js"><link rel="prefetch" href="/assets/js/199.a9260ee5.js"><link rel="prefetch" href="/assets/js/20.b4d3dd95.js"><link rel="prefetch" href="/assets/js/200.a726f1e7.js"><link rel="prefetch" href="/assets/js/201.374499e8.js"><link rel="prefetch" href="/assets/js/202.05f26eaf.js"><link rel="prefetch" href="/assets/js/203.4a1332c9.js"><link rel="prefetch" href="/assets/js/204.fdf336c2.js"><link rel="prefetch" href="/assets/js/205.c00075af.js"><link rel="prefetch" href="/assets/js/206.e6451e1d.js"><link rel="prefetch" href="/assets/js/207.404acc01.js"><link rel="prefetch" href="/assets/js/208.a9cae455.js"><link rel="prefetch" href="/assets/js/209.9c063a97.js"><link rel="prefetch" href="/assets/js/21.c927fb6e.js"><link rel="prefetch" href="/assets/js/210.e51fc952.js"><link rel="prefetch" href="/assets/js/211.e4708bc2.js"><link rel="prefetch" href="/assets/js/212.55a1f656.js"><link rel="prefetch" href="/assets/js/213.85660006.js"><link rel="prefetch" href="/assets/js/214.a4fb6aff.js"><link rel="prefetch" href="/assets/js/215.e9425ea6.js"><link rel="prefetch" href="/assets/js/22.aaa5cef2.js"><link rel="prefetch" href="/assets/js/23.6d01db3f.js"><link rel="prefetch" href="/assets/js/24.773d765a.js"><link rel="prefetch" href="/assets/js/25.97e93f98.js"><link rel="prefetch" href="/assets/js/26.d2740d8d.js"><link rel="prefetch" href="/assets/js/27.da04aa85.js"><link rel="prefetch" href="/assets/js/28.4c6ec29e.js"><link rel="prefetch" href="/assets/js/29.8f29556b.js"><link rel="prefetch" href="/assets/js/3.ee55d0ae.js"><link rel="prefetch" href="/assets/js/30.e316fd87.js"><link rel="prefetch" href="/assets/js/31.7e9723ff.js"><link rel="prefetch" href="/assets/js/32.e4cbdafa.js"><link rel="prefetch" href="/assets/js/33.c8df984f.js"><link rel="prefetch" href="/assets/js/34.f5f2d6f9.js"><link rel="prefetch" href="/assets/js/35.74fee710.js"><link rel="prefetch" href="/assets/js/36.771cc37c.js"><link rel="prefetch" href="/assets/js/37.ec772ab0.js"><link rel="prefetch" href="/assets/js/38.cf0e64b8.js"><link rel="prefetch" href="/assets/js/39.7bbe9d14.js"><link rel="prefetch" href="/assets/js/4.10d21f0c.js"><link rel="prefetch" href="/assets/js/41.135a82f3.js"><link rel="prefetch" href="/assets/js/42.822e67a5.js"><link rel="prefetch" href="/assets/js/43.7c8c7a64.js"><link rel="prefetch" href="/assets/js/44.451b3aff.js"><link rel="prefetch" href="/assets/js/45.cf3c0ae1.js"><link rel="prefetch" href="/assets/js/46.532e6b20.js"><link rel="prefetch" href="/assets/js/47.6a6c1b7c.js"><link rel="prefetch" href="/assets/js/48.656bfde1.js"><link rel="prefetch" href="/assets/js/49.ddd95ebb.js"><link rel="prefetch" href="/assets/js/5.ba7fdfdb.js"><link rel="prefetch" href="/assets/js/50.c157f1c4.js"><link rel="prefetch" href="/assets/js/51.89ef2d04.js"><link rel="prefetch" href="/assets/js/52.256e1ad5.js"><link rel="prefetch" href="/assets/js/53.421475a9.js"><link rel="prefetch" href="/assets/js/54.54292a80.js"><link rel="prefetch" href="/assets/js/55.fb7b9015.js"><link rel="prefetch" href="/assets/js/56.5735679e.js"><link rel="prefetch" href="/assets/js/57.83192220.js"><link rel="prefetch" href="/assets/js/58.56cee477.js"><link rel="prefetch" href="/assets/js/59.fda5e13f.js"><link rel="prefetch" href="/assets/js/6.e2a5bf1d.js"><link rel="prefetch" href="/assets/js/60.acb899f6.js"><link rel="prefetch" href="/assets/js/61.fbc5a6c4.js"><link rel="prefetch" href="/assets/js/62.bc2ef1cf.js"><link rel="prefetch" href="/assets/js/63.083818e3.js"><link rel="prefetch" href="/assets/js/64.a8e4911d.js"><link rel="prefetch" href="/assets/js/65.d2ca7af7.js"><link rel="prefetch" href="/assets/js/66.9f27d515.js"><link rel="prefetch" href="/assets/js/67.1753bd13.js"><link rel="prefetch" href="/assets/js/68.611376fe.js"><link rel="prefetch" href="/assets/js/69.1e24f8bb.js"><link rel="prefetch" href="/assets/js/7.69fcb83c.js"><link rel="prefetch" href="/assets/js/70.28f77937.js"><link rel="prefetch" href="/assets/js/71.d7f05512.js"><link rel="prefetch" href="/assets/js/72.b3bf48ca.js"><link rel="prefetch" href="/assets/js/73.670771e0.js"><link rel="prefetch" href="/assets/js/74.d01c3831.js"><link rel="prefetch" href="/assets/js/75.dda2f844.js"><link rel="prefetch" href="/assets/js/76.8d38534f.js"><link rel="prefetch" href="/assets/js/77.655ed175.js"><link rel="prefetch" href="/assets/js/78.447cee96.js"><link rel="prefetch" href="/assets/js/79.3e4c89e6.js"><link rel="prefetch" href="/assets/js/8.e655fc21.js"><link rel="prefetch" href="/assets/js/80.e9200df2.js"><link rel="prefetch" href="/assets/js/81.6b33f378.js"><link rel="prefetch" href="/assets/js/82.00a9801a.js"><link rel="prefetch" href="/assets/js/83.9631b89f.js"><link rel="prefetch" href="/assets/js/84.0b6c710c.js"><link rel="prefetch" href="/assets/js/85.a591639f.js"><link rel="prefetch" href="/assets/js/86.c42ce28b.js"><link rel="prefetch" href="/assets/js/87.b75fdda8.js"><link rel="prefetch" href="/assets/js/88.976b5470.js"><link rel="prefetch" href="/assets/js/89.57f0d4a5.js"><link rel="prefetch" href="/assets/js/9.0148b4fb.js"><link rel="prefetch" href="/assets/js/90.c15fddaf.js"><link rel="prefetch" href="/assets/js/91.105f8784.js"><link rel="prefetch" href="/assets/js/92.8788a19e.js"><link rel="prefetch" href="/assets/js/93.73f2a563.js"><link rel="prefetch" href="/assets/js/94.0e1e6b8e.js"><link rel="prefetch" href="/assets/js/95.2097ef4b.js"><link rel="prefetch" href="/assets/js/96.5def29c5.js"><link rel="prefetch" href="/assets/js/97.a9142510.js"><link rel="prefetch" href="/assets/js/98.316d18cf.js"><link rel="prefetch" href="/assets/js/99.60f73518.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ea4a5991.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/favicon.ico" alt="Adair" class="logo"> <span class="site-name can-hide">Adair</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Notes" class="dropdown-title"><span class="title">Notes</span> <span class="arrow down"></span></button> <button type="button" aria-label="Notes" class="mobile-dropdown-title"><span class="title">Notes</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/note/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/note/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/note/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/note/echarts/" class="nav-link">
+  Echarts
+</a></li><li class="dropdown-item"><!----> <a href="/note/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Interview" class="dropdown-title"><span class="title">Interview</span> <span class="arrow down"></span></button> <button type="button" aria-label="Interview" class="mobile-dropdown-title"><span class="title">Interview</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/interview/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/interview/https/" class="nav-link">
+  Http
+</a></li><li class="dropdown-item"><!----> <a href="/interview/css/" class="nav-link router-link-active">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><a href="/vueSource/" class="nav-link">
+  Vue2源码
+</a></div><div class="nav-item"><a href="/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="源码相关" class="dropdown-title"><span class="title">源码相关</span> <span class="arrow down"></span></button> <button type="button" aria-label="源码相关" class="mobile-dropdown-title"><span class="title">源码相关</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/source/axios/" class="nav-link">
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/source/vuerouter/" class="nav-link">
+  Vue Router
+</a></li><li class="dropdown-item"><!----> <a href="/source/vuex/" class="nav-link">
+  Vuex
+</a></li><li class="dropdown-item"><!----> <a href="/source/ruochuan/" class="nav-link">
+  源码共读
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基建" class="dropdown-title"><span class="title">基建</span> <span class="arrow down"></span></button> <button type="button" aria-label="基建" class="mobile-dropdown-title"><span class="title">基建</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/infrastructure/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/infrastructure/babel/" class="nav-link">
+  Babel
+</a></li><li class="dropdown-item"><!----> <a href="/infrastructure/npm/" class="nav-link">
+  NPM
+</a></li><li class="dropdown-item"><!----> <a href="/infrastructure/framework/" class="nav-link">
+  前端框架
+</a></li><li class="dropdown-item"><!----> <a href="/infrastructure/unitTest/" class="nav-link">
+  单元测试
+</a></li></ul></div></div> <a href="https://github.com/duzit/du-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Notes" class="dropdown-title"><span class="title">Notes</span> <span class="arrow down"></span></button> <button type="button" aria-label="Notes" class="mobile-dropdown-title"><span class="title">Notes</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/note/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/note/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/note/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/note/echarts/" class="nav-link">
+  Echarts
+</a></li><li class="dropdown-item"><!----> <a href="/note/css/" class="nav-link">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Interview" class="dropdown-title"><span class="title">Interview</span> <span class="arrow down"></span></button> <button type="button" aria-label="Interview" class="mobile-dropdown-title"><span class="title">Interview</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/interview/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/interview/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/interview/https/" class="nav-link">
+  Http
+</a></li><li class="dropdown-item"><!----> <a href="/interview/css/" class="nav-link router-link-active">
+  CSS
+</a></li></ul></div></div><div class="nav-item"><a href="/vueSource/" class="nav-link">
+  Vue2源码
+</a></div><div class="nav-item"><a href="/es6/" class="nav-link">
+  ES6
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="源码相关" class="dropdown-title"><span class="title">源码相关</span> <span class="arrow down"></span></button> <button type="button" aria-label="源码相关" class="mobile-dropdown-title"><span class="title">源码相关</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/source/axios/" class="nav-link">
+  axios
+</a></li><li class="dropdown-item"><!----> <a href="/source/vuerouter/" class="nav-link">
+  Vue Router
+</a></li><li class="dropdown-item"><!----> <a href="/source/vuex/" class="nav-link">
+  Vuex
+</a></li><li class="dropdown-item"><!----> <a href="/source/ruochuan/" class="nav-link">
+  源码共读
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基建" class="dropdown-title"><span class="title">基建</span> <span class="arrow down"></span></button> <button type="button" aria-label="基建" class="mobile-dropdown-title"><span class="title">基建</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/infrastructure/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/infrastructure/babel/" class="nav-link">
+  Babel
+</a></li><li class="dropdown-item"><!----> <a href="/infrastructure/npm/" class="nav-link">
+  NPM
+</a></li><li class="dropdown-item"><!----> <a href="/infrastructure/framework/" class="nav-link">
+  前端框架
+</a></li><li class="dropdown-item"><!----> <a href="/infrastructure/unitTest/" class="nav-link">
+  单元测试
+</a></li></ul></div></div> <a href="https://github.com/duzit/du-vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/interview/css/transition.html" class="sidebar-link">transition</a></li><li><a href="/interview/css/displaynone.visibilityhidden.html" class="sidebar-link">display:none visibility:hidden</a></li><li><a href="/interview/css/fakeclass.html" class="sidebar-link">伪类</a></li><li><a href="/interview/css/link.@import.html" class="sidebar-link">CSS中 link 和 @import 的区别</a></li><li><a href="/interview/css/absolute.float.html" class="sidebar-link">position: absolute 和 float 区别</a></li><li><a href="/interview/css/box-sizing.html" class="sidebar-link">box-sizing 的理解</a></li><li><a href="/interview/css/float.html" class="sidebar-link">float 的理解</a></li><li><a href="/interview/css/selector.html" class="sidebar-link">CSS 选择器</a></li><li><a href="/interview/css/BFC.html" aria-current="page" class="active sidebar-link">BFC 理解</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/interview/css/BFC.html#特性" class="sidebar-link">特性</a></li><li class="sidebar-sub-header"><a href="/interview/css/BFC.html#作用" class="sidebar-link">作用</a></li></ul></li><li><a href="/interview/css/css3新特性.html" class="sidebar-link">CSS3 新特性</a></li><li><a href="/interview/css/两列布局的几种方法.html" class="sidebar-link">两列布局的几种方法</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="bfc-理解"><a href="#bfc-理解" class="header-anchor">#</a> BFC 理解</h1> <ul><li><p>Block Formate Content 块级格式化上下文</p></li> <li><p><a href="https://codepen.io/duzit/pen/YzELjRM" target="_blank" rel="noopener noreferrer">codepen<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li></ul> <h2 id="特性"><a href="#特性" class="header-anchor">#</a> 特性</h2> <ul><li><p>创建的盒子是独立布局，不影响外部盒子的布局</p></li> <li><p>同一个 BFC 中 两个相邻的块级盒子在水平或垂直方向会发生 margin 重叠，解决方法是设置其中一个子元素为BFC</p></li> <li><p>可以包含浮动元素，父元素设置BFC  <code>overflow: hidden;</code> 不设置BFC的情况下 不会撑开子浮动元素</p></li> <li><p>BFC的区域不会与float box重叠，float 环绕功能 遇到BFC 不会生效</p></li></ul> <h2 id="作用"><a href="#作用" class="header-anchor">#</a> 作用</h2> <ul><li><p>自使用两栏布局</p></li> <li><p>阻止元素被浮动元素覆盖</p></li> <li><p>可以包含浮动元素</p></li> <li><p>可以防止margin重叠</p></li></ul> <div class="language-pug line-numbers-mode"><pre class="language-pug"><code><span class="token tag"><span class="token attr-class">.box1</span></span> 
+  <span class="token comment">// margin 塌陷</span>
+  <span class="token tag"><span class="token attr-class">.b</span><span class="token attr-class">.b1</span></span>
+  <span class="token tag"><span class="token attr-class">.b</span><span class="token attr-class">.b2</span></span>
+
+<span class="token tag"><span class="token attr-class">.box2</span></span> 
+  <span class="token tag"><span class="token attr-class">.b</span><span class="token attr-class">.b1</span></span>
+  <span class="token comment">// 重新构成BFC 解决 margin 塌陷</span>
+  <span class="token tag"><span class="token attr-class">.bfc</span></span>
+    <span class="token tag"><span class="token attr-class">.b</span><span class="token attr-class">.b2</span></span>
+
+<span class="token tag"><span class="token attr-class">.box3</span></span> 
+  <span class="token comment">// 子元素设置 float  box3 需设置BFC 才能撑起子元素</span>
+  <span class="token tag"><span class="token attr-class">.b</span><span class="token attr-class">.b31</span></span>
+  <span class="token tag"><span class="token attr-class">.b</span><span class="token attr-class">.b32</span></span>
+
+<span class="token tag"><span class="token attr-class">.box4</span></span>
+  <span class="token comment">// f1设置float 后 默认 p 文字会环绕 但当 p 设置了 BFC 后就不会环绕了   </span>
+  <span class="token tag"><span class="token attr-class">.f1</span></span>
+  <span class="token tag">p</span> <span class="token plain-text">alfhakldjgakjdf;akljdg;kajdfklajdklfjgadskljgjfkaldjsf;klgjadgjakldjfk;aljdgk;ajdsg;kal金坷垃都放假啊； 安抚了健康大反馈了京东方；啊ad分类进卡里即可发放哈夫节啊；个安抚了健康发货联合国拉开发了接地开关哈联合国阿里第三个回复阿良好的噶非</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><div class="language-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">// div</span> <span class="token punctuation">{</span>
+//   <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+//   <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+// <span class="token punctuation">}</span>
+
+<span class="token selector">.b</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.box1</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #666<span class="token selector">;
+
+  .b1</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.b2</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.box2</span> <span class="token punctuation">{</span>
+  // <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #999<span class="token selector">;
+
+  .b1</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.bfc</span> <span class="token punctuation">{</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token selector">;
+    .b2</span> <span class="token punctuation">{</span>
+      <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+      <span class="token property">margin-top</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.box3</span> <span class="token punctuation">{</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span> // 构成 BFC 可以将 b31 b32 撑起来
+  <span class="token property">background</span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid<span class="token selector">;
+  .b31</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.b32</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.box4</span> <span class="token punctuation">{</span>
+  <span class="token selector">.f1</span> <span class="token punctuation">{</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">p</span> <span class="token punctuation">{</span>
+    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/interview/css/selector.html" class="prev">
+        CSS 选择器
+      </a></span> <span class="next"><a href="/interview/css/css3新特性.html">
+        CSS3 新特性
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e7d09f62.js" defer></script><script src="/assets/js/2.cb849f65.js" defer></script><script src="/assets/js/40.e7150e18.js" defer></script>
+  </body>
+</html>
